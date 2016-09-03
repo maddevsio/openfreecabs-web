@@ -4,7 +4,7 @@ var currentLocation;
 function initMap() {
   var locIcon = '/static/loc.png';
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: 42.876680, lng: 74.588665},
     zoom: 8
   });
 
@@ -30,11 +30,11 @@ function initMap() {
 
 
     }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+      console.log("Can't get coords");
     });
   } else {
     // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
+    console.log("Browser doesn't support geolocation")
   }
   google.maps.event.addListener(map, 'click', function(e) {
     changeLocationPin(e.latLng);
