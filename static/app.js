@@ -54,7 +54,7 @@ function changeLocationPin(latlng) {
 }
 
 function requestNearest(lat, lng){
-  var url = window.location.href + "/nearest/" + lat + "/" + lng;
+  var url = window.location.href + "nearest/" + lat + "/" + lng;
 
 
   var xmlhttp;
