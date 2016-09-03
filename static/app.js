@@ -1,7 +1,7 @@
 var map;
 var markers = [];
 var currentLocation;
-var defaultCoords = {lat: 42.876680, lng: 74.588665},
+var defaultCoords = {lat: 42.876680, lng: 74.588665};
 function initMap() {
   var locIcon = '/static/loc.png';
   map = new google.maps.Map(document.getElementById('map'), {
