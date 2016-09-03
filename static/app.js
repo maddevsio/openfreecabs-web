@@ -1,11 +1,12 @@
 var map;
 var markers = [];
 var currentLocation;
+var defaultCoords = {lat: 42.876680, lng: 74.588665},
 function initMap() {
   var locIcon = '/static/loc.png';
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 42.876680, lng: 74.588665},
-    zoom: 8
+    center: defaultCoords,
+    zoom: 14
   });
 
   // Try HTML5 geolocation.
@@ -31,6 +32,11 @@ function initMap() {
 
     }, function() {
       console.log("Can't get coords");
+      currentLocation = new google.maps.Marker({
+        position: defaultCoords,
+        map: map,
+        icon: locIcon
+      })
     });
   } else {
     // Browser doesn't support Geolocation
