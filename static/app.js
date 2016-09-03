@@ -74,7 +74,7 @@ function requestNearest(lat, lng){
                   map: map,
                   title: company.name,
               }
-              if (company.icon !== "") {
+              if (company.icon !== "" && company.icon !== window.location.origin) {
                 options.icon = company.icon
               }
               markers.push(
