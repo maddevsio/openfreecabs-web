@@ -1,2 +1,8 @@
 web
 *.sw[p,o]
+.idea
+openfreecabs-web
+#static/img/
+#static/styles.css
+#static/styles.css.map
+#static/styles.scss

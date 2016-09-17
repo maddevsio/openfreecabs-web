@@ -96,3 +96,15 @@ function cleanMarkers() {
   }
   markers = []
 }
+
+var result = $(".result_wrap");
+
+$("#choose_taxi").click(function () {
+  if(result.is(':hidden')){
+    console.log('-=-=-=-=-=-=');
+    result.slideDown('slow');
+  }else{
+    console.log('9090909');
+    result.slideUp('slow');
+  }
+});
