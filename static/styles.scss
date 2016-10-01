@@ -138,3 +138,10 @@ select{
   border: none;
   font-size: 16px;
 }
+.result_item:first-child{
+  .result_count_wrap{
+    .result_count_number, .result_count_description{
+      color: #4caf50;
+    }
+  }
+}

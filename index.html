@@ -1,130 +1,74 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/styles.css" media="screen" title="no title">
-  </head>
-  <body>
-    <header>
-      <div class="header_wrap">
+    <script id="result" type="text/x-handlebars-template">
+        <div class="result_item">
+            <div class="result_title">
+                <div class="result_title-icon">
+                    <img src="static/img/icon_namba.png" alt="">
+                </div>
+
+                <div class="result_title-contact">
+                    <div class="result_title-name">{{name}}</div>
+                    <div class="result_title-phone">0 312 976000</div>
+                </div>
+            </div>
+            <div class="result_info">
+                <div class="result_links">
+                    <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-android" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
+                </div>
+                <div class="result_info_message">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    9760
+                </div>
+            </div>
+            <div class="result_count">
+                <div class="result_count_wrap">
+                    <div class="result_count_number">{{ driversCount }}</div>
+                    <div class="result_count_description">Free cabs</div>
+                </div>
+            </div>
+        </div>
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="header_wrap">
         <a href="#" class="logotype">
-          <img src="static/img/logo.png" alt="Logotype: OpenFreeCabs">
+            <img src="static/img/logo.png" alt="Logotype: OpenFreeCabs">
         </a>
         <form>
-          <select name="" id="">
-            <option value="">Kyrgyzstan, Bishkek</option>
-            <option value="">Kyrgyzstan, Osh</option>
-          </select>
+            <select name="" id="">
+                <option value="">Kyrgyzstan, Bishkek</option>
+                <option value="">Kyrgyzstan, Osh</option>
+            </select>
         </form>
         <form class="form_search" action="">
-          <input class="input_form" placeholder="Type your address..." type="text">
-          <div class="choose_taxi" id="choose_taxi" >For a taxi call?</div>
-          <div class="result_wrap">
-            <div class="result_item">
-              <div class="result_title">
-                <div class="result_title-icon">
-                  <img src="static/img/icon_namba.png" alt="">
-                </div>
-                <div class="result_title-contact">
-                  <div class="result_title-name">Namba Taxi</div>
-                  <div class="result_title-phone">0 312 976000</div>
-                </div>
-              </div>
-              <div class="result_info">
-                <div class="result_links">
-                  <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-android" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
-                </div>
-                <div class="result_info_message">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  9760
-                </div>
-              </div>
-              <div class="result_count">
-                <div class="result_count_wrap">
-                  <div class="result_count_number best_count">30</div>
-                  <div class="result_count_description best_count">Free cabs</div>
-                </div>
-              </div>
+            <input class="input_form" placeholder="Type your address..." type="text">
+            <div class="choose_taxi" id="choose_taxi">For a taxi call?</div>
+            <div class="result_wrap">
+
+
             </div>
-            <div class="result_item">
-              <div class="result_title">
-                <div class="result_title-icon">
-                  <img src="static/img/icon_sms.png" alt="">
-                </div>
-                <div class="result_title-contact">
-                  <div class="result_title-name">SMSTaxi</div>
-                  <select class="result_title-phone">
-                    <option value="">0551 06-1236</option>
-                    <option value="">0551 06-1236</option>
-                    <option value="">0551 07-1236</option>
-                    <option value="">0551 08-1236</option>
-                  </select>
-                </div>
-              </div>
-              <div class="result_info">
-                <div class="result_links">
-                  <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-android" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
-                </div>
-                <div class="result_info_message">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  9760
-                </div>
-              </div>
-              <div class="result_count">
-                <div class="result_count_wrap">
-                  <div class="result_count_number">20</div>
-                  <div class="result_count_description">Free cabs</div>
-                </div>
-              </div>
-            </div>
-            <div class="result_item">
-              <div class="result_title">
-                <div class="result_title-icon">
-                  <img src="static/img/icon_tez.png" alt="">
-                </div>
-                <div class="result_title-contact">
-                  <div class="result_title-name">TEZ Taxi</div>
-                  <div class="result_title-phone">0 312 976000</div>
-                </div>
-              </div>
-              <div class="result_info">
-                <div class="result_links">
-                  <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-android" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
-                </div>
-                <div class="result_info_message">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  9760
-                </div>
-              </div>
-              <div class="result_count">
-                <div class="result_count_wrap">
-                  <div class="result_count_number">9</div>
-                  <div class="result_count_description">Free cabs</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </form>
         <a href="#">
-          <i class="fa fa-github" aria-hidden="true"></i>
+            <i class="fa fa-github" aria-hidden="true"></i>
         </a>
-      </div>
-    </header>
-    <div id="map"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="/static/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNgMeyAL1i2lkuLniOnyAvwTMY6Fo5GZA&callback=initMap"
+    </div>
+</header>
+<div id="map"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="/static/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNgMeyAL1i2lkuLniOnyAvwTMY6Fo5GZA&callback=initMap"
         async defer></script>
-  </body>
+</body>
 </html>
