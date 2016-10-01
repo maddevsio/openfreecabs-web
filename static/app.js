@@ -64,14 +64,55 @@ function requestNearest(lat, lng) {
 						console.log(data);
 						if (data.success) {
 								cleanMarkers();
-								data.companies = data.companies.sort(function(a, b) {
+								data.companies = data.companies.sort(function (a, b) {
 										return a.drivers.length < b.drivers.length
 								});
+
+
 								for (i = 0; i < data.companies.length; i++) {
+
 										var company = data.companies[i];
+										var phoneNumber = "",
+												shortNumber = "",
+												webSite = "#",
+												android = "#",
+												iOS = "#";
+										if (company.contacts !== null) {
+												for (l = 0; l < company.contacts.length; l++) {
+														c = company.contacts[l];
+														console.log(c);
+														switch (c.type) {
+																case 'phone':
+																		phoneNumber = c.contact;
+																		break;
+																case 'sms':
+																		shortNumber = c.contact;
+																		break;
+																case 'android':
+																		android = c.contact;
+																		break;
+																case 'ios':
+																		iOS = c.contact;
+																		break;
+																case 'website':
+																		webSite = c.contact;
+																		break;
+														}
+												}
+										}
+										console.log(phoneNumber);
+										console.log(shortNumber);
 										var source = document.getElementById('result').innerHTML;
 										var template = Handlebars.compile(source);
-										var html = template({name: company.name, driversCount: company.drivers.length});
+										var html = template({
+												name: company.name,
+												driversCount: company.drivers.length,
+												phoneNumber: phoneNumber,
+												shortNumber: shortNumber,
+												webSite: webSite,
+												android: android,
+												iOS: iOS
+										});
 										$(".result_wrap").append(html);
 										for (j = 0; j < company.drivers.length; j++) {
 												var item = company.drivers[j];
