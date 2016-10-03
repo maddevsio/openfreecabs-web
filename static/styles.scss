@@ -37,6 +37,7 @@ select{
   font-weight: 100;
   padding-left: 30px;
   width: 550px;
+  visibility: hidden;
   ::-webkit-input-placeholder {color:#ddd;}
   ::-moz-placeholder          {color:#ddd;}
   :-moz-placeholder           {color:#ddd;}
@@ -44,6 +45,9 @@ select{
   &:focus{
     outline: none;
   }
+}
+.city_hidden{
+  display: none;
 }
 .fa-github{
   color: #ffffff;
@@ -54,9 +58,12 @@ select{
   position: relative;
 }
 .result_wrap{
-  position: absolute;
+  position: fixed;
+  overflow-y: scroll;
   background: #fff;
-  width: 100%;
+  width: 585px;
+  max-height: 500px;
+  min-height: 102px;
   display: none;
   .result_item{
     display: flex;
