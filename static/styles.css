@@ -98,7 +98,9 @@ header {
   overflow-y: scroll; }
 
 .result_title-icon {
-  width: 30px; }
+  width: 34px; }
+  .result_title-icon img {
+    max-width: 100%; }
 
 .result_title-phone {
   background: #ffcc47;

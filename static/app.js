@@ -106,11 +106,15 @@ function fillContact(contact, contactData){
 }
 
 function renderDriversSidebar(company, drivers, contact){
+	var countOfAllDrivers = 0;
   var source = document.getElementById('result').innerHTML;
   var template = Handlebars.compile(source);
-  var html = template({
+	countOfAllDrivers += drivers.length;
+
+		var html = template({
     name: company.name,
     icon: company.icon,
+		countOfAllDrivers: countOfAllDrivers,
     driversCount: drivers.length,
     phoneNumber: contact.phoneNumber,
     shortNumber: contact.shortNumber,
@@ -118,6 +122,7 @@ function renderDriversSidebar(company, drivers, contact){
     android: contact.android,
     iOS: contact.iOS
   });
+
   return html;
 }
 
@@ -143,7 +148,7 @@ function renderDriverMarkers(drivers, company){
 function requestNearest(lat, lng) {
   // var url = window.location.origin + "/nearest/" + lat + "/" + lng;
 
-  var url = "http://127.0.0.1:8091/nearest/" + lat + "/" + lng;
+  var url = "http://127.0.0.1:8090/nearest/" + lat + "/" + lng;
 
   var xmlhttp;
   // compatible with IE7+, Firefox, Chrome, Opera, Safari
@@ -156,15 +161,12 @@ function requestNearest(lat, lng) {
         data.companies = data.companies.sort(function (a, b) {
           return a.drivers.length < b.drivers.length
         });
-
         cleanMarkers();
         for (var i = 0, len=data.companies.length; i < len; i++) {
-
           var company = data.companies[i];
           var drivers = company.drivers;
           var contact = fillCompanyContact(company);
           var $resultWrap = $(".result_wrap");
-
           $resultWrap.find('.result_title-phone').off('click');
 
           var driverSidebarHtml = renderDriversSidebar(company, drivers, contact);
@@ -177,6 +179,7 @@ function requestNearest(lat, lng) {
             $(this).val(phone);
           });
         }
+        console.log(countOfAllDrivers);
       }
     }
   };
@@ -185,7 +188,6 @@ function requestNearest(lat, lng) {
 }
 
 function cleanMarkers() {
-  console.log("Markers: ", markers.length);
   for (var i = 0; i < markers.length; i++) {
     var marker = markers[i];
     marker.setMap(null);

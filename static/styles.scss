@@ -121,7 +121,10 @@ header{
   overflow-y: scroll;
 }
 .result_title-icon{
-  width: 30px;
+  width: 34px;
+  img{
+    max-width: 100%;
+  }
 }
 .result_title-phone{
   background: #ffcc47;
