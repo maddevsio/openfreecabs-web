@@ -91,6 +91,24 @@ header{
   }
 }
 
+.center_my_location{
+  position: absolute;
+  right: 420px;
+  background: transparent;
+  border: none;
+  &:hover{
+    fill: #2C5F9B;
+    transition: fill .4s;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:active .center_my_location_svg_button{
+    outline: none;
+
+
+  }
+}
 .sidebar{
   position: fixed;
   height: 100%;
