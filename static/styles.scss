@@ -132,6 +132,12 @@ header{
   border-radius: 5px;
   font-size: 14px;
   border: none;
+  color: #000;
+  text-decoration: none;
+  &:focus, &:hover, &:active{
+    text-decoration: none;
+    outline: none;
+  }
   &:focus, &:active{
     outline: none;
   }

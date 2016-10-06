@@ -107,7 +107,12 @@ header {
   padding: 10px 10px;
   border-radius: 5px;
   font-size: 14px;
-  border: none; }
+  border: none;
+  color: #000;
+  text-decoration: none; }
+  .result_title-phone:focus, .result_title-phone:hover, .result_title-phone:active {
+    text-decoration: none;
+    outline: none; }
   .result_title-phone:focus, .result_title-phone:active {
     outline: none; }
 
