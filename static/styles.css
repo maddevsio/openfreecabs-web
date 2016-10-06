@@ -26,7 +26,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 15px;
+  padding: 20px 15px;
   border-bottom: 1px solid #cccccc; }
   .result_wrap .result_item .result_title {
     display: flex; }
@@ -91,7 +91,11 @@ header {
   background: #ffcc47;
   padding: 10px 10px;
   border-radius: 5px;
-  font-size: 16px; }
+  font-size: 14px;
+  width: 100%;
+  border: none; }
+  .result_title-phone:focus, .result_title-phone:active {
+    outline: none; }
 
 .logotype {
   margin: 15px; }
