@@ -193,3 +193,7 @@ function cleanMarkers() {
   markers = [];
   $(".result_wrap").html("");
 }
+
+$('#mobile_button').click(function () {
+	$('.sidebar').slideToggle();
+});

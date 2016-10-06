@@ -143,8 +143,18 @@ header {
       text-decoration: none; }
 
 @media (max-width: 600px) {
+  .copyright {
+    position: relative;
+    bottom: 0; }
+
   .sidebar {
-    display: none; }
+    display: none;
+    width: 100%;
+    height: calc(100% - 105px);
+    position: absolute;
+    top: 105px; }
+    .sidebar .result_item {
+      flex-wrap: wrap; }
 
   .button {
     display: block;
