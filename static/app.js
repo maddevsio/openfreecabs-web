@@ -109,12 +109,10 @@ function renderDriversSidebar(company, drivers, contact){
 	var countOfAllDrivers = 0;
   var source = document.getElementById('result').innerHTML;
   var template = Handlebars.compile(source);
-	countOfAllDrivers += drivers.length;
 
 		var html = template({
     name: company.name,
     icon: company.icon,
-		countOfAllDrivers: countOfAllDrivers,
     driversCount: drivers.length,
     phoneNumber: contact.phoneNumber,
     shortNumber: contact.shortNumber,

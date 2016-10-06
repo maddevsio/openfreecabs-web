@@ -148,7 +148,19 @@ header{
   height: 40px;
   text-align: center;
 }
-
+.copyright{
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  left: 0;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  img{
+    position: relative;
+    bottom: -7px;
+  }
+}
 @media (max-width: 600px) {
   .sidebar{
     display: none;
