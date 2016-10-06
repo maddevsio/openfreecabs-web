@@ -107,7 +107,6 @@ header {
   padding: 10px 10px;
   border-radius: 5px;
   font-size: 14px;
-  width: 100%;
   border: none; }
   .result_title-phone:focus, .result_title-phone:active {
     outline: none; }
