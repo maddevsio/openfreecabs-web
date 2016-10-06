@@ -134,6 +134,13 @@ header {
   .copyright img {
     position: relative;
     bottom: -7px; }
+  .copyright p {
+    margin-top: 7px; }
+  .copyright a {
+    color: #000;
+    text-decoration: none; }
+    .copyright a:hover, .copyright a:focus, .copyright a:active {
+      text-decoration: none; }
 
 @media (max-width: 600px) {
   .sidebar {
