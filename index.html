@@ -5,28 +5,18 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css" />
     <link rel="stylesheet" href="static/styles.css" media="screen" title="no title">
     <script id="result" type="text/x-handlebars-template">
         <div class="result_item">
             <div class="result_title">
                 <div class="result_title-icon">
-                    <img src="static/img/icon_namba.png" alt="">
+                    <img src="{{icon}}" alt="">
                 </div>
 
                 <div class="result_title-contact">
                     <div class="result_title-name">{{name}}</div>
-                    <div class="result_title-phone">{{phoneNumber}}</div>
-                </div>
-            </div>
-            <div class="result_info">
-                <div class="result_links">
-                    <a href="{{webSite}}"><i class="fa fa-desktop" aria-hidden="true"></i></a>
-                    <a href="{{android}}"><i class="fa fa-android" aria-hidden="true"></i></a>
-                    <a href="{{iOS}}"><i class="fa fa-apple" aria-hidden="true"></i></a>
-                </div>
-                <div class="result_info_message">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    {{shortNumber}}
                 </div>
             </div>
             <div class="result_count">
@@ -35,36 +25,29 @@
                     <div class="result_count_description">Free cabs</div>
                 </div>
             </div>
+
+            <div class="result_info">
+                <div class="result_title-phone SeeMore2">{{phoneNumber}}</div>
+            </div>
         </div>
 
     </script>
 </head>
 <body>
 <header>
-    <div class="header_wrap">
-        <a href="#" class="logotype">
-            <img src="static/img/logo.png" alt="Logotype: OpenFreeCabs">
-        </a>
-        <form class="city_hidden">
-            <select name="" id="">
-                <option value="">Kyrgyzstan, Bishkek</option>
-                <option value="">Kyrgyzstan, Osh</option>
-            </select>
-        </form>
-        <form class="form_search" action="">
-            <input class="input_form" placeholder="Type your address..." type="text">
-            <div class="choose_taxi" id="choose_taxi">For a taxi call?</div>
-            <div class="result_wrap">
-
-
-            </div>
-        </form>
-        <a href="#">
-            <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
+    <div class="logotype">
+        <img src="static/img/logo.png" alt="Logotype: OpenFreeCabs">
     </div>
 </header>
+<section class="sidebar">
+    <div class="result_wrap"></div>
+</section>
+<div class="button">
+    Найдено машин: 30
+</div>
+
 <div id="map"></div>
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="/static/app.js"></script>

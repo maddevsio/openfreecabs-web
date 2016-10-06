@@ -2,13 +2,15 @@ var map;
 var markers = [];
 var currentLocation;
 var defaultCoords = {lat: 42.876680, lng: 74.588665};
+var geoloccontrol = new klokantech.GeolocationControl(map, mapMaxZoom);
+
 function initMap() {
 		var locIcon = '/static/loc.png';
 		map = new google.maps.Map(document.getElementById('map'), {
 				center: defaultCoords,
-				zoom: 14
+				zoom: 14,
+				disableDefaultUI: true
 		});
-
 		// Try HTML5 geolocation.
 		if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function (position) {
@@ -52,8 +54,9 @@ function changeLocationPin(latlng) {
 }
 
 function requestNearest(lat, lng) {
-		var url = window.location.origin + "/nearest/" + lat + "/" + lng;
+		// var url = window.location.origin + "/nearest/" + lat + "/" + lng;
 
+		var url = "http://127.0.0.1:8090/nearest/" + lat + "/" + lng;
 
 		var xmlhttp;
 		// compatible with IE7+, Firefox, Chrome, Opera, Safari
@@ -72,10 +75,11 @@ function requestNearest(lat, lng) {
 								for (i = 0; i < data.companies.length; i++) {
 
 										var company = data.companies[i];
-										var phoneNumber = "",
+										var phoneNumber = "n/a",
 												shortNumber = "",
 												webSite = "#",
 												android = "#",
+												icon = "static/img/icon_namba.png",
 												iOS = "#";
 										if (company.contacts !== null) {
 												for (l = 0; l < company.contacts.length; l++) {
@@ -97,6 +101,9 @@ function requestNearest(lat, lng) {
 																case 'website':
 																		webSite = c.contact;
 																		break;
+																case 'icon':
+																		icon = c.icon;
+																		break;
 														}
 												}
 										}
@@ -106,6 +113,7 @@ function requestNearest(lat, lng) {
 										var template = Handlebars.compile(source);
 										var html = template({
 												name: company.name,
+												icon: company.icon,
 												driversCount: company.drivers.length,
 												phoneNumber: phoneNumber,
 												shortNumber: shortNumber,
@@ -144,13 +152,3 @@ function cleanMarkers() {
 		markers = [];
 		$(".result_wrap").html("");
 }
-
-var result = $(".result_wrap");
-
-$("#choose_taxi").click(function () {
-		if (result.is(':hidden')) {
-				result.slideDown('slow');
-		} else {
-				result.slideUp('slow');
-		}
-});
