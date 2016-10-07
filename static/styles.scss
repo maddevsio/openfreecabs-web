@@ -184,9 +184,9 @@ header{
   .sidebar{
     display: none;
     width: 100%;
-    height: calc(100% - 105px);
+    height: calc(100% - 108px);
     position: absolute;
-    top: 105px;
+    top: 108px;
     .result_item{
       flex-wrap: wrap;
     }
@@ -213,5 +213,26 @@ header{
       margin: auto;
       display: block;
     }
+  }
+}
+
+@media (max-width: 425px) {
+  .result_wrap .result_item{
+    padding: 15px 15px 10px;
+  }
+  .result_title{
+    order: 1;
+  }
+  .result_count{
+    order: 3;
+    margin-left: 45px;
+    .result_count_wrap{
+      display: flex;
+      align-items: center;
+    }
+  }
+  .result_info{
+    order: 2;
+    height: auto;
   }
 }
