@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
 )
 
 func main() {
@@ -10,6 +9,5 @@ func main() {
 
 	e.File("/", "index.html")
 	e.Static("/static", "static")
-	e.Run(standard.New(":8091"))
-
+	e.Start(":8091")
 }
